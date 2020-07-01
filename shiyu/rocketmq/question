@@ -1,0 +1,63 @@
+怎么用消息队列
+不同模块间相互调用
+
+为什么使用消息队列
+有高频时间点，容易打挂机器，买机器搞分布又不合算，解耦，直接用数据库，改字段影响很多，直接用接口，死等太慢了
+
+消息队列都有什么优点和缺点
+削峰填谷，但异步处理无法实时更新数据导致的(数据一致性)
+
+Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么区别？
+kafka 依赖 zookeeper 用于服务发现
+rocoket 自有服务发现，无需三方做服务保证
+rocketmp 可以支持强制写入磁盘或只写入内存提升性能
+kafka支持stream API流式传输，rocketmp不支持，流式API不担心存储问题
+流处理即连续、实时、并发和以逐记录方式处理数据的类型，我们称之为Kafka流处理
+
+
+消息队列的延时以及过期失效问题？
+kafka支持动态扩容，增加容量对应积压，并调整消息删除时间到两周，可以在消费者异常时重复消费
+rocketmp不支持动态扩容，在积压时，可以在消费者端丢弃消息或增加master后重入新topic扩容
+
+
+消息的可靠性传输？消息丢失
+消息队列的高可用
+https://www.iteblog.com/archives/2560.html
+
+崩溃恢复，内存数据入磁盘，分布式，双写
+rocketmp 分布式集群
+单master 不可用
+多master 单台挂掉消息丢失且恢复慢
+多master-slave 异步复制 master 磁盘损坏会丢失少部分数据
+多master-slave 同步双写 性能降低10%，安全性最优
+从库请求master建立链接，以本地commitlog最大offset拉取master数据
+消费者优先使用主库，当消息堆积太多时，映射40%内存，则使用从库
+
+rocketmp 分布式集群
+kafka主从一致性
+一个topic可切分多个分区，每个分区可有多个replicas，replicas即为Partition副本，不参与流程处理，只用于容灾
+Partition分区只可增加，不可缩减，缩减数据不好处理
+kafka主从由zookeeper维护，一个leader被选举产生，选举zad算法？
+当Partition leader挂掉，从isr 中replicas选举一个leader Partition
+副本同步规则 ISR(in sync replicas) HW(hight water mark)
+当从库复制速度慢会被踢出isr，消费者是能看到HW值，所有副本都有的消息即为HW message id位置
+
+
+消息的顺序性？
+kafka topic切分分区后，分区有序，topic整体无序
+一个生产者可以指定只发送到一个主题中的一个分区上
+当生产者不指定分区，则生产的消息可能无序
+
+保证消息不被重复消费？幂等性?
+区分请求重复，过滤重复请求
+producer 消息唯一，解决生产者重复生产时，broker存取两份相同数据
+一个主题多个分区，对应一个消费组多个消费者
+单独分区只能由一个消费者组的消费者消费，消费者也可指定分区消费
+
+
+
+消息队列的架构设计？
+
+监控，队列机的资源使用率(cpu idle,memo use,net)，队列积压数。
+持久化数据，死信队列。
+异步化与同步阻塞化
