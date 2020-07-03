@@ -1,8 +1,10 @@
+package cn.codecor;
+
 import java.util.Arrays;
 
-public class Matrix {
+public class shiyu_378 {
     public static void main(String[] args) {
-        Matrix aa = new Matrix();
+        shiyu_378 aa = new shiyu_378();
         int[][] mx = {{1,5,9},{10,11,13},{12,13,15}};
         System.out.println("输出数字是");
         System.out.println(aa.kthSmallest(mx, 8-1));

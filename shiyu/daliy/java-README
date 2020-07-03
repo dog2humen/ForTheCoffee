@@ -1,4 +1,0 @@
-windows执行环境
-javac -encoding UTF-8 -d .\ Matrix.java
-
-java -cp . Matrix
