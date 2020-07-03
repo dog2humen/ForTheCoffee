@@ -20,7 +20,7 @@ class Solution(object):
     # if str(i) + str(j) < str(j) + str(i), then i should before j
     def quick_sort_str_list(self, str_nums, left, right):
         if left >= right:
-            return
+            return str_nums  # 原来只有 return, 不行, 需要返回修改后的 str_nums
 
         i, j = left, right
 
