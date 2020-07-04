@@ -9,7 +9,8 @@
 
 class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
-	return self.sortedArrayToBST_v1(nums)
+	#return self.sortedArrayToBST_v1(nums)
+	return self.sortedArrayToBST_v2(nums)
     def sortedArrayToBST_v1(self, nums: List[int]) -> TreeNode:
 	'''
             recursive: bst中序遍历正好是有序数组, 所以直接从有序数组构造bst即可
@@ -34,6 +35,36 @@ class Solution:
 
     def sortedArrayToBST_v2(self, nums: List[int]) -> TreeNode:
         '''
-            迭代
+            迭代dfs 使用栈
         '''
+        if len(nums) == 0:
+            return None
+        
+        res = TreeNode(0)
+        stack = []
+        left, right = 0, len(nums) - 1
+        stack.append(right)
+        stack.append(left)
+        stack.append(res)
 
+        while stack:
+            root = stack.pop() # the TreeNode type
+            left = stack.pop()
+            right = stack.pop()
+            mid = left + (right - left) // 2
+            root.val = nums[mid]
+
+            if left <= mid - 1:
+                root.left = TreeNode(0)
+                stack.append(mid - 1)
+                stack.append(left)
+                stack.append(root.left)
+            
+            if right >= mid + 1:
+                root.right = TreeNode(0)
+                stack.append(right)
+                stack.append(mid + 1)
+                stack.append(root.right)
+
+
+        return res
