@@ -8,6 +8,15 @@
 | 最长重复子数组 | maximum-length-of-repeated-subarray | 718 | [link](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) |
 | 通配符匹配 | wildcard-matching | 44 | [link](https://leetcode-cn.com/problems/wildcard-matching/) |
 
+### 动态规划系列
+#### 最长公共子串, 最长公共子序列系列
+参考一下文章理解: [link](https://mp.weixin.qq.com/s/XJyujBI5nofVE9CUbStemA)
+
+
+
+
+
+
 
 
 #### 施宇命令行
