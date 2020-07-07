@@ -8,6 +8,8 @@
 | 最长重复子数组 | maximum-length-of-repeated-subarray | 718 | [link](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) |
 | 通配符匹配 | wildcard-matching | 44 | [link](https://leetcode-cn.com/problems/wildcard-matching/) |
 | 不同路径 II | unique-paths-ii | 63 | [link](https://leetcode-cn.com/problems/unique-paths-ii/) |
+| 路径总和 | path-sum | 112 | [link](https://leetcode-cn.com/problems/path-sum/) |
+
 
 
 ### 动态规划系列
