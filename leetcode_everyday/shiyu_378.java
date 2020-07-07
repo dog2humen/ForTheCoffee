@@ -1,5 +1,7 @@
 package cn.codecor;
 
+import cn.codecor.*;
+
 public class shiyu_378 {
     public static void main(String[] args) {
         shiyu_378 test = new shiyu_378();
