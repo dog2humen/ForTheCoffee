@@ -1,0 +1,35 @@
+### nginx双向链表实现队列
+
+nginx双向链表实现存在于nginx_queue.h
+
+1.由调用方实现内存控制
+2.支持两个链表的合并
+3.自排序
+
+以前置声明方式生成结构体，结构体中只存在向前向后两个指针，不存在其他结构
+前置声明只能用指针访问，因为除了指针，无法确定其他类型的大小，而指针大小平台相关23|64
+
+```
+typedef struct ngx_queue_s  ngx_queue_t;
+
+struct ngx_queue_s {
+    ngx_queue_t  *prev;
+    ngx_queue_t  *next;
+};
+```
+
+使用此链表时，只需把 ngx_queue_t 写入到需装载数据的结构体中
+
+```
+typedef struct {
+    ngx_queue_t qPoint;
+    void* data;
+} node_t;
+```
+
+读取数据时，可以使用 offsetof() 寻找数据结构体中链表指针偏移量获取整个对象指针出初始位置来读取整个数据结构体
+
+```
+#define ngx_queue_data(q, type, link)                                         \
+    (type *) ((u_char *) q - offsetof(type, link))
+```
