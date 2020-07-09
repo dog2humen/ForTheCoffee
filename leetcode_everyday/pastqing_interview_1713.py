@@ -9,33 +9,53 @@ class Solution:
         return self.respace_v2(dictionary, sentence)
 
     def respace_v1(self, dictionary: List[str], sentence: str) -> int:
-        if len(sentence) == 0:
-            return 0
+        '''
+            dp解法
+            dp[i]表示sentence以i位置为结尾的最小匹配数
+            状态转移方程:
+                1. 若第i个字符不匹配, 则dp[i] = dp[i - 1] + 1
+                2. 遍历前sentence的i-1个, 若以其中某个下标id为开头, 以i为结尾的单词在dictionary里(匹配到了), 则dp[i] = min(dp[idx], dp[i]) 
+            初始化:
+                dp长度为len(sentence) + 1, 预留空的匹配
+                dp[0] = 0
+        '''
+        size = len(sentence)
+        dp = [0 for _ in range(size + 1)]
+        dp[0] = 0
+        
+        for i in range(1, size + 1):
+            dp[i] = dp[i - 1] + 1
+            for j in range(i):
+                if sentence[j : i] in dictionary:
+                    dp[i] = min(dp[j], dp[i])
 
-        self.res = 0
-        self.helper(dictionary, sentence, 0, len(sentence) - 1)
-        return self.res
-    
-
-    def helper(self, dictionary, sentence, start, end):
-
-        # terminated
-
-        # cur level
-        if sentence[start : end + 1] not in dictionary:
-            self.res += len(sentence[start : end + 1])
-        else:
-            start = end
-
-        # 枚举起点和终点
-        for i in range(start, len(sentence)):
-            self.helper(dictionary, sentence, start, i)
-
-        #return self.res
-
-
+        return dp[-1]
 
     def respace_v2(self, dictionary: List[str], sentence: str) -> int:
+        '''
+            dp解法
+            使用字典树加速
+            遍历前i - 1个时, 查询以第i为结尾的单词加速
+        '''
+        # 构建trie树
+        trie = Trie()
+        for word in dictionary:
+            trie.insert(word)
+
+        size = len(sentence)
+        dp = [0 for _ in range(size + 1)]
+        dp[0] = 0
+        for i in range(1, size + 1):
+            dp[i] = dp[i - 1] + 1
+            for j in range(i):
+                if trie.search(sentence[j : i]):
+                    dp[i] = min(dp[j], dp[i])
+        return dp[-1]
+
+
+
+
+    def respace_v3(self, dictionary: List[str], sentence: str) -> int:
         '''
             暴力法, 枚举所有的上界和下界
         '''
@@ -76,6 +96,35 @@ class Solution:
             
         return res
 
+class Trie:
+
+    def __init__(self):
+        self.root = {}
+        self.end_mark = '#'
+
+
+    def insert(self, word: str) -> None:
+        node = self.root
+        for ch in word[::-1]:
+            node = node.setdefault(ch, {})
+        node[self.end_mark] = self.end_mark
+
+    def search(self, word: str) -> bool:
+        node = self.root
+        for ch in word[::-1]:
+            if ch not in node:
+                return False
+            node = node[ch]
+        return self.end_mark in node
+
+
+    def startWith(self, prefix: str) -> bool:
+        node = self.root
+        for ch in prefix[::-1]:
+            if ch not in node:
+                return False
+            node = node[ch]
+        return True
 
 if __name__ == '__main__':
     obj = Solution()
