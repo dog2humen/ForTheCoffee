@@ -11,12 +11,15 @@
 | 路径总和 | path-sum | 112 | [link](https://leetcode-cn.com/problems/path-sum/) |
 | 跳水板 | diving-board-lcci | 面试题16.11 | [link](https://leetcode-cn.com/problems/diving-board-lcci/) |
 | 恢复空格 | re-space-lcci | 面试题17.13 | [link](https://leetcode-cn.com/problems/re-space-lcci/) |
+| 最佳买卖股票时机含冷冻期 | best-time-to-buy-and-sell-stock-with-cooldown | 309 | [link](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) |
 
 
 
 ### 动态规划系列
 #### 最长公共子串, 最长公共子序列系列
 参考一下文章理解: [link](https://mp.weixin.qq.com/s/XJyujBI5nofVE9CUbStemA)
+#### 股票买卖系列
+参考一下文章理解: [link](https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tuan-mie-gu-piao-wen-ti)
 
 ### 关于字典树(Trie树)
 - 基本结构: 字典树是一种树形结构.典型应用是用于统计和排序大量的字符串(但不仅限于字符串), 经常被搜索引擎用于文本词频统计.
