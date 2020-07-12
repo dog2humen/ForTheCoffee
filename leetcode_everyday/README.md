@@ -13,6 +13,7 @@
 | 恢复空格 | re-space-lcci | 面试题17.13 | [link](https://leetcode-cn.com/problems/re-space-lcci/) |
 | 最佳买卖股票时机含冷冻期 | best-time-to-buy-and-sell-stock-with-cooldown | 309 | [link](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) |
 | 计算右侧小于当前元素的个数 | count-of-smaller-numbers-after-self | 315 | [link](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) |
+| 地下城游戏 | dungeon-game | 174 | [link](https://leetcode-cn.com/problems/dungeon-game/) |
 
 
 
