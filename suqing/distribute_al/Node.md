@@ -92,6 +92,9 @@
         - Following: 集群选主后, 其他节点状态更新为Following.
         - Observing: 观察者状态, 没投票权和选举权.
     - 选举过程:
-
-- 优点:
-- 缺点:
+        - 每个节点维护一个三元组(server_ID, server_zxID, epoch), server_ID表示当前节点id, server_zxID表示点前节点的数据id, epoch表示当前选举轮数. 选主原则是server_zxID最大的为Leader, server_zxID一样的, server_ID大的为Leader. 投票过程采取每个节点广播投票消息给其他节点, 消息为(vote_id, vote_zxID)的二元组.vote_id为投票给哪个server_ID, vote_zxID为数据id
+        - 假设集群有三个节点, 每个节点的server_zxID都为0. 初始化, epoch = 1, 每个节点都给自己投票, 并将投票信息广播给其他节点, (vote_id, vote_zxID).
+        - 根据规则, 由于三个节点的epoch, server_zxID都一样, 因此server_ID大的应被选举为主, 更新投票信息, server1, server2将vote_id 改为3, 重新广播.
+        - 此时系统内全部节点都选了server3,  因此server3变为Leader, 状态改为Leading. Leader向其他节点发心跳. server1, server2 变为Following状态.
+- 优点: zab算法性能高, 对系统无特殊要求.选举稳定性比较好, 新节点加入集群或者节点故障恢复后触发选主, 但不一定真正切主(除非新节点或者故障恢复的节点的id和zxID都最大, 且获得投票过半)
+- 缺点: 广播通信量大, n个节点, 广播一遍就是n\*(n - 1), 容易导致广播风暴. 每个节点都需要维护其他节点的id和数据id信息, 选举时间较长.
