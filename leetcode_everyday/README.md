@@ -15,6 +15,7 @@
 | 计算右侧小于当前元素的个数 | count-of-smaller-numbers-after-self | 315 | [link](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) |
 | 地下城游戏 | dungeon-game | 174 | [link](https://leetcode-cn.com/problems/dungeon-game/) |
 | 两个数组的交集 II | intersection-of-two-arrays-ii | 350 | [link](https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/) |
+| 三角形最小路径和 | triangle | 120 | [link](https://leetcode-cn.com/problems/triangle/) |
 
 
 
