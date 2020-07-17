@@ -6,10 +6,25 @@
 #define ngx_hash(key, c)   ((ngx_uint_t) key * 31 + c)
 ```
 
+### 哈希表结构
+```
+typedef struct {
+    void             *value;
+    u_short           len;
+    u_char            name[1];
+} ngx_hash_elt_t;
+```
+1. name为柔性数组，默认占用一位空间，整体由于内存对齐，占用16位空间，完全可以改为 name[6] 更为直观
+
 ### 哈希碰撞处理
 1. nginx使用拉链法处理碰撞
+2. 拉链为nginx内部实现动态数组ngx_array_t
+3. 默认初始化4个元素承接数据
+
+
+### module如何加载至主事件循环
+configure 会生成 ngx_modules.c文件，只包含一个字符串数组，元素为需引入的模块，由此编译生成ELF
 
 
 ### 待分析 ngx_pcall 内存管理
 ### 哈希表如何禁止增删
-### module如何加载至主事件循环
