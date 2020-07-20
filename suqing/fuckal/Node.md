@@ -23,4 +23,6 @@
 | 括号生成 | generate-parentheses | 22 | [link](https://leetcode-cn.com/problems/generate-parentheses/)|
 | 字母异位词分组 | group-anagrams | 49 | [link](https://leetcode-cn.com/problems/group-anagrams/)|
 | 翻转二叉树 | invert-binary-tree | 226 | [link](https://leetcode-cn.com/problems/invert-binary-tree/description/)|
+| 电话号码的字母组合 | letter-combinations-of-a-phone-number | 17 | [link](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)|
+| 二叉树的最近公共祖先 | lowest-common-ancestor-of-a-binary-tree | 236 | [link](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)|
 
