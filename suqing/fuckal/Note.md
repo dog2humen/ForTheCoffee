@@ -27,4 +27,5 @@
 | 二叉树的最近公共祖先 | lowest-common-ancestor-of-a-binary-tree | 236 | [link](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)|
 | 多数元素 | majority-element | 169 | [link](https://leetcode-cn.com/problems/majority-element/description/)|
 | 二叉树的最大深度 | maximum-depth-of-binary-tree | 104 | [link](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)|
+| 二叉树的最小深度 | minimum-depth-of-binary-tree | 111 | [link](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)|
 
