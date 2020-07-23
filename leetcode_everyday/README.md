@@ -24,6 +24,7 @@
 | 两数之和 II - 输入有序数组 | two-sum-ii-input-array-is-sorted | 167 | [link](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/) |
 | 不同的二叉搜索树 II | unique-binary-search-trees-ii | 95 | [link](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/) |
 | 旋转数组的最小数字 | xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof | 剑指 Offer 11 | [link](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/) |
+| 最小路径和 | minimum-path-sum | 64 | [link](https://leetcode-cn.com/problems/minimum-path-sum/) |
 
 
 
