@@ -28,7 +28,6 @@
 | 除数博弈 | divisor-game | 1025 | [link](https://leetcode-cn.com/problems/divisor-game/) |
 | 分割数组的最大值 | split-array-largest-sum | 410 | [link](https://leetcode-cn.com/problems/split-array-largest-sum/) |
 | 矩阵中的最长递增路径 | longest-increasing-path-in-a-matrix | 329 | [link](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) |
-| 判断子序列 | is-subsequence | 392 | [link](https://leetcode-cn.com/problems/is-subsequence/) |
 
 
 
