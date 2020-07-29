@@ -30,6 +30,7 @@
 | 矩阵中的最长递增路径 | longest-increasing-path-in-a-matrix | 329 | [link](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) |
 | 判断子序列 | is-subsequence | 392 | [link](https://leetcode-cn.com/problems/is-subsequence/) |
 | 二叉树的最大深度 | maximum-depth-of-binary-tree | 104 | [link](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) |
+| 寻宝 | xun-bao | lcp 13 | [link](https://leetcode-cn.com/problems/xun-bao/) |
 
 
 
