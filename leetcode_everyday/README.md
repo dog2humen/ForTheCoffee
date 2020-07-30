@@ -31,6 +31,7 @@
 | 判断子序列 | is-subsequence | 392 | [link](https://leetcode-cn.com/problems/is-subsequence/) |
 | 二叉树的最大深度 | maximum-depth-of-binary-tree | 104 | [link](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) |
 | 寻宝 | xun-bao | lcp 13 | [link](https://leetcode-cn.com/problems/xun-bao/) |
+| 整数拆分 | integer-break | 343 | [link](https://leetcode-cn.com/problems/integer-break/) |
 
 
 
