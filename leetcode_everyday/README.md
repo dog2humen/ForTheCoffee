@@ -33,6 +33,7 @@
 | 寻宝 | xun-bao | lcp 13 | [link](https://leetcode-cn.com/problems/xun-bao/) |
 | 整数拆分 | integer-break | 343 | [link](https://leetcode-cn.com/problems/integer-break/) |
 | 魔术索引 | magic-index-lcci | 面试题 08.03 | [link](https://leetcode-cn.com/problems/magic-index-lcci/) |
+| 最小区间 | smallest-range-covering-elements-from-k-lists | 632 | [link](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/) |
 
 
 
