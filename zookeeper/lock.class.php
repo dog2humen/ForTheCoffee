@@ -16,10 +16,10 @@ class lock
     }
 
 
-    public function get_instance()
+    public function get_instance($ip,$port)
     {
         if (!(self::$_instance instanceof self)) {
-            self::$_instance = new self();
+            self::$_instance = new self($ip,$port);
         }
         return self::$_instance;
     }
@@ -32,33 +32,34 @@ class lock
                 'scheme' => 'world',
                 'id' => 'anyone',
             ));
-        return $zookeeper->create($path, "1000", $acl, Zookeeper::EPHEMERAL|ZOO_SEQUENCE);
+        return self::$zk_obj->create($path, "1000", $acl, Zookeeper::EPHEMERAL|Zookeeper::SEQUENCE);
 
     }
 
     private static function watcher(){
-        return self::lock()
+        return self::lock();
     }
 
     public static function lock(){
         if(empty(self::$znode)){
                 self::$znode = self::create_tmp_node(self::$global_path);
             }
-        return self::get_lock()
+        return self::get_lock();
     }
 
 
     public static function get_lock()
     {
-
-
-        $childrens = self::$zk_obj->getchildren(self::$global_path));
-        if(!empty($childrens)
+        $childrens = self::$zk_obj->getchildren('/');
+		var_dump($childrens);
+        //$childrens = self::$zk_obj->getchildren(self::$global_path);
+        if(!empty($childrens))
         {
             sort($childrens);
+			var_dump(self::$znode);
             if($childrens[0] == self::$znode)
             {
-                reutrn true;
+                return true;
             }
         }
         else
@@ -76,3 +77,6 @@ class lock
     }
 
 }
+$lock = lock::get_instance('127.0.0.1','2181');
+$have_lock = $lock::lock();
+var_dump($have_lock);die;
