@@ -9,6 +9,7 @@
 | 05 | 打家劫舍III | house-robber-iii | 337 | [link](https://leetcode-cn.com/problems/house-robber-iii/) |
 | 06 | 回文对 | Palindrome Pairs | 336 | [link](https://leetcode-cn.com/problems/palindrome-pairs/) |
 | 07 | 相同的树 | Same Tree | 100 | [link](https://leetcode-cn.com/problems/same-tree/) |
+| 08 | 恢复二叉搜索树 | recover-binary-search-tree | 99 | [link](https://leetcode-cn.com/problems/recover-binary-search-tree/) |
 
 
 ## 7月leetcode每日一题
