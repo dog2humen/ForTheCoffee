@@ -11,6 +11,7 @@
 | 07 | 相同的树 | Same Tree | 100 | [link](https://leetcode-cn.com/problems/same-tree/) |
 | 08 | 恢复二叉搜索树 | recover-binary-search-tree | 99 | [link](https://leetcode-cn.com/problems/recover-binary-search-tree/) |
 | 09 | 复原IP地址 | Restore IP Addresses | 93 | [link](https://leetcode-cn.com/problems/restore-ip-addresses/) |
+| 10 | 计数二进制子串 | count-binary-substrings | 696 | [link](https://leetcode-cn.com/problems/count-binary-substrings/) |
 
 
 ## 7月leetcode每日一题
