@@ -15,6 +15,7 @@
 | 11 | 被围绕的区域 | surrounded-regions | 130 | [link](https://leetcode-cn.com/problems/surrounded-regions/) |
 | 12 | 克隆图 | clone-graph | 133 | [link](https://leetcode-cn.com/problems/clone-graph/) |
 | 13 | 字符串相乘 | multiply-strings | 43 | [link](https://leetcode-cn.com/problems/multiply-strings/) |
+| 14 | 有效的括号 | valid-parentheses | 20 | [link](https://leetcode-cn.com/problems/valid-parentheses/) |
 
 
 ## 7月leetcode每日一题
