@@ -7,6 +7,16 @@
 | 03 | 字符串相加 | add-strings | 415 | [link](https://leetcode-cn.com/problems/add-strings/) |
 | 04 | 课程表 | course-schedule | 207 | [link](https://leetcode-cn.com/problems/course-schedule/) |
 | 05 | 打家劫舍III | house-robber-iii | 337 | [link](https://leetcode-cn.com/problems/house-robber-iii/) |
+| 06 | 回文对 | Palindrome Pairs | 336 | [link](https://leetcode-cn.com/problems/palindrome-pairs/) |
+| 07 | 相同的树 | Same Tree | 100 | [link](https://leetcode-cn.com/problems/same-tree/) |
+| 08 | 恢复二叉搜索树 | recover-binary-search-tree | 99 | [link](https://leetcode-cn.com/problems/recover-binary-search-tree/) |
+| 09 | 复原IP地址 | Restore IP Addresses | 93 | [link](https://leetcode-cn.com/problems/restore-ip-addresses/) |
+| 10 | 计数二进制子串 | count-binary-substrings | 696 | [link](https://leetcode-cn.com/problems/count-binary-substrings/) |
+| 11 | 被围绕的区域 | surrounded-regions | 130 | [link](https://leetcode-cn.com/problems/surrounded-regions/) |
+| 12 | 克隆图 | clone-graph | 133 | [link](https://leetcode-cn.com/problems/clone-graph/) |
+| 13 | 字符串相乘 | multiply-strings | 43 | [link](https://leetcode-cn.com/problems/multiply-strings/) |
+| 14 | 有效的括号 | valid-parentheses | 20 | [link](https://leetcode-cn.com/problems/valid-parentheses/) |
+
 
 ## 7月leetcode每日一题
 
