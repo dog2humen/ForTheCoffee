@@ -16,6 +16,7 @@
 | 12 | 克隆图 | clone-graph | 133 | [link](https://leetcode-cn.com/problems/clone-graph/) |
 | 13 | 字符串相乘 | multiply-strings | 43 | [link](https://leetcode-cn.com/problems/multiply-strings/) |
 | 14 | 有效的括号 | valid-parentheses | 20 | [link](https://leetcode-cn.com/problems/valid-parentheses/) |
+| 15 | 移除盒子 | remove-boxes | 546 | [link](https://leetcode-cn.com/problems/remove-boxes/) |
 
 
 ## 7月leetcode每日一题
