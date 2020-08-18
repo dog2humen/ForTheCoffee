@@ -17,6 +17,9 @@
 | 13 | 字符串相乘 | multiply-strings | 43 | [link](https://leetcode-cn.com/problems/multiply-strings/) |
 | 14 | 有效的括号 | valid-parentheses | 20 | [link](https://leetcode-cn.com/problems/valid-parentheses/) |
 | 15 | 移除盒子 | remove-boxes | 546 | [link](https://leetcode-cn.com/problems/remove-boxes/) |
+| 16 | 图像渲染 | flood-fill | 733 | [link](https://leetcode-cn.com/problems/flood-fill/) |
+| 17 | 平衡二叉树 | balanced-binary-tree | 110 | [link](https://leetcode-cn.com/problems/balanced-binary-tree/) |
+| 18 | 有序链表转换二叉搜索树 | convert-sorted-list-to-binary-search-tree | 109 | [link](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/) |
 
 
 ## 7月leetcode每日一题
