@@ -20,6 +20,8 @@
 | 题目 | enName | 序号 | 连接 |
 | :---: | :---: | :---: | :---: |
 | 二叉树的前序遍历 | binary-tree-preorder-traversal | 144 | [link](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)|
+| 二叉树的后序遍历 | binary-tree-postorder-traversal | 145 | [link](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)|
+| 二叉树的中序遍历 | binary-tree-inorder-traversal | 94 | [link](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)|
 | 爬楼梯 | climbing-stairs | 70 | [link](https://leetcode-cn.com/problems/climbing-stairs/)|
 | 组合 | combinations | 77 | [link](https://leetcode-cn.com/problems/combinations/)|
 | 从前序与中序遍历序列构造二叉树 | construct-binary-tree-from-preorder-and-inorder-traversal | 105 | [link](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)|
