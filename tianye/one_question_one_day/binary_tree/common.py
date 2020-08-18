@@ -1,18 +1,161 @@
+# encoding=utf8
+
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+# Definition for a binary tree node.
 class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-class binary_tree_basic_operation(object):
-    def pre_order_cursive(self, root):
+class Solution(object):
+    """
+        110. 平衡二叉树
+        给定一个二叉树，判断它是否是高度平衡的二叉树。
 
-    def pre_oder(self, root):
+        本题中，一棵高度平衡二叉树定义为：
 
-    def in_order_cursive(self, root):
+        一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。
 
-    def in_order(self, root):
+        示例 1:
 
-    def post_order_cursive(self, root):
+        给定二叉树 [3,9,20,null,null,15,7]
 
-    def post_order(self, root):
+            3
+           / \
+          9  20
+            /  \
+           15   7
+        返回 true 。
+
+        示例 2:
+
+        给定二叉树 [1,2,2,3,3,null,null,4,4]
+
+               1
+              / \
+             2   2
+            / \
+           3   3
+          / \
+         4   4
+        返回 false 。
+    """
+    def isBalanced(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        return self.isBalanced_v2(root)
+
+    # 自顶向下
+    def isBalanced_v1(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        if not root:
+            return True
+        return abs(self.height(root.left) - self.height(root.right)) <= 1 and \
+            self.isBalanced_v1(root.left) and self.isBalanced_v1(root.right)
+
+    def height(self, root):
+        if not root:
+            return 0
+        return max(self.height(root.left), self.height(root.right)) + 1
+
+    # 自底向上 还需理解
+    def isBalanced_v2(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        return self.dfs(root) != -1
+
+    def dfs(self, root):
+        if not root: return 0
+        left = self.dfs(root.left)
+        if left == -1: return -1
+        right = self.dfs(root.right)
+        if right == -1: return -1
+        return max(left, right) + 1 if abs(left - right) < 2 else -1
+    
+    
+    """
+        109. 有序链表转换二叉搜索树
+        给定一个单链表，其中的元素按升序排序，将其转换为高度平衡的二叉搜索树。
+
+        本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。
+
+        示例:
+
+        给定的有序链表： [-10, -3, 0, 5, 9],
+
+        一个可能的答案是：[0, -3, 9, -10, null, 5], 它可以表示下面这个高度平衡二叉搜索树：
+
+              0
+             / \
+           -3   9
+           /   /
+         -10  5
+    """
+    def sortedListToBST(self, head):
+        """
+        :type head: ListNode
+        :rtype: TreeNode
+        """
+        return self.sortedListToBST_v1(head)
+
+    #  快慢指针
+    def sortedListToBST_v1(self, head):
+        """
+        :type head: ListNode
+        :rtype: TreeNode
+        """
+        i
+            return None
+        slow, fast, pre = head, head, None
+
+        while fast and fast.next:
+            pre = slow
+            slow = slow.next
+            fast = fast.next.next
+
+        root = TreeNode(slow.val)
+
+        if pre:
+            pre.next = None
+            root.left = self.sortedListToBST_v1(head)
+
+        root.right = self.sortedListToBST_v1(slow.next)
+
+        return root
+
+
+    # 转化成有序数组，找中间节点
+    def sortedListToBST_v2(self, head):
+        """
+        :type head: ListNode
+        :rtype: TreeNode
+        """
+        if not head:
+            return None
+        arr = []
+        while head:
+            arr.append(head.val)
+            head = head.next
+        return self.build_BST(arr, 0, len(arr) - 1)
+
+    def build_BST(self, arr, start, end):
+        if start > end:
+            return None
+        mid = start + (end - start) // 2
+        root = TreeNode(arr[mid])
+        root.left = self.build_BST(arr, start, mid - 1)
+        root.right = self.build_BST(arr, mid + 1, end)
+        return root
