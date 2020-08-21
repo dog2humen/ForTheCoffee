@@ -42,16 +42,12 @@ class Solution(object):
         if not root:
             return 0
 
-        if not root.left and not root.right:
-            return 1
+        if not root.right:
+            return self.minDepth_v1(root.left) + 1
+        if not root.left:
+            return self.minDepth_v1(root.right) + 1
 
-        l = self.minDepth(root.left)
-        r = self.minDepth(root.right)
-
-        if not root.left or not root.right:
-            return l + r + 1
-
-        return min(l, r) + 1
+        return min(self.minDepth_v1(root.left), self.minDepth_v1(root.right)) + 1
 
     # bfs
     def minDepth_v2(self, root):
