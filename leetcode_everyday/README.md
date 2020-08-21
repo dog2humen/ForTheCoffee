@@ -22,6 +22,7 @@
 | 18 | 有序链表转换二叉搜索树 | convert-sorted-list-to-binary-search-tree | 109 | [link](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/) |
 | 19 | 回文子串 | palindromic-substrings | 647 | [link](https://leetcode-cn.com/problems/palindromic-substrings/) |
 | 20 |  扫雷游戏 | minesweeper | 529 | [link](https://leetcode-cn.com/problems/minesweeper/) |
+| 21 |  二叉树的最小深度 | minimum-depth-of-binary-tree | 111 | [link](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/) |
 
 
 ## 7月leetcode每日一题
