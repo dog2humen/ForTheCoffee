@@ -23,6 +23,7 @@
 | 19 | 回文子串 | palindromic-substrings | 647 | [link](https://leetcode-cn.com/problems/palindromic-substrings/) |
 | 20 |  扫雷游戏 | minesweeper | 529 | [link](https://leetcode-cn.com/problems/minesweeper/) |
 | 21 |  二叉树的最小深度 | minimum-depth-of-binary-tree | 111 | [link](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/) |
+| 22 | 24 点游戏 | 24-game | 679 | [link](https://leetcode-cn.com/problems/24-game/) |
 
 
 ## 7月leetcode每日一题
