@@ -26,6 +26,7 @@
 | 22 | 24 点游戏 | 24-game | 679 | [link](https://leetcode-cn.com/problems/24-game/) |
 | 23 | 数字范围按位与 | bitwise-and-of-numbers-range | 201 | [link](https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/) |
 | 24 | 重复的子字符串 | repeated-substring-pattern | 459 | [link](https://leetcode-cn.com/problems/repeated-substring-pattern/) |
+| 25 | 递增子序列 | increasing-subsequences | 491 | [link](https://leetcode-cn.com/problems/increasing-subsequences/) |
 
 
 ## 7月leetcode每日一题
