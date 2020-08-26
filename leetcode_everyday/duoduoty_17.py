@@ -39,12 +39,13 @@ class Solution(object):
         def dfs(n):
             if n == len(digits):
                 res.append(''.join(tmp))
-            else:
-                digit = digits[n]
-                for letter in phone_map[digit]:
-                    tmp.append(letter)
-                    dfs(n + 1)
-                    tmp.pop()
+                return
+            #else:
+            digit = digits[n]
+            for letter in phone_map[digit]:
+                tmp.append(letter)
+                dfs(n + 1)
+                tmp.pop()
         dfs(0)
         return res
 
