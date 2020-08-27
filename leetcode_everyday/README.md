@@ -28,6 +28,7 @@
 | 24 | 重复的子字符串 | repeated-substring-pattern | 459 | [link](https://leetcode-cn.com/problems/repeated-substring-pattern/) |
 | 25 | 递增子序列 | increasing-subsequences | 491 | [link](https://leetcode-cn.com/problems/increasing-subsequences/) |
 | 26 | 电话号码的字母组合 | letter-combinations-of-a-phone-number | 17 | [link](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/) |
+| 27 | 重新安排行程 | reconstruct-itinerary | 332 | [link](https://leetcode-cn.com/problems/reconstruct-itinerary/) |
 
 
 ## 7月leetcode每日一题
