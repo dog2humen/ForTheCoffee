@@ -30,6 +30,9 @@
 | 26 | 电话号码的字母组合 | letter-combinations-of-a-phone-number | 17 | [link](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/) |
 | 27 | 重新安排行程 | reconstruct-itinerary | 332 | [link](https://leetcode-cn.com/problems/reconstruct-itinerary/) |
 | 28 | 机器人能否返回原点 | robot-return-to-origin | 657 | [link](https://leetcode-cn.com/problems/robot-return-to-origin/) |
+| 29 | 最短回文串 | shortest-palindrome | 214 | [link](https://leetcode-cn.com/problems/shortest-palindrome/) |
+| 30 | 最短回文串 | shortest-palindrome | 214 | [link](https://leetcode-cn.com/problems/shortest-palindrome/) |
+| 31 | 钥匙和房间 | keys-and-rooms | 841 | [link](https://leetcode-cn.com/problems/keys-and-rooms/) |
 
 
 ## 7月leetcode每日一题
