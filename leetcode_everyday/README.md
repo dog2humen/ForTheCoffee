@@ -1,3 +1,9 @@
+## 9月leetcode每日一题
+| 日期 | 题目| enName | 序号| 链接 |
+| :---: | :---: | :---: | :---: | :---: |  
+| 01 | 预测赢家 | predict-the-winner | 486 | [link](https://leetcode-cn.com/problems/predict-the-winner/) |
+| 02 | 剑指 Offer 20. 表示数值的字符串 | biao-shi-shu-zhi-de-zi-fu-chuan-lcof | offer.20 | [link](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/) |
+
 ## 8月leetcode每日一题
 
 | 日期 | 题目| enName | 序号| 链接 |
