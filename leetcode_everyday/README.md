@@ -3,6 +3,7 @@
 | :---: | :---: | :---: | :---: | :---: |  
 | 01 | 预测赢家 | predict-the-winner | 486 | [link](https://leetcode-cn.com/problems/predict-the-winner/) |
 | 02 | 剑指 Offer 20. 表示数值的字符串 | biao-shi-shu-zhi-de-zi-fu-chuan-lcof | offer.20 | [link](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/) |
+| 51 | N皇后 | n-queens | 51 | [link](https://leetcode-cn.com/problems/n-queens/) |
 
 ## 8月leetcode每日一题
 
