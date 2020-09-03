@@ -37,15 +37,15 @@ class Downloader():
         self.filename = self.filename + ".mp4"
 
         # ts 文件缓存目录
-        self.tmp_folder = "down_temp_" + filename
+        self.tmp_folder = "temp_ts" + filename
 
         self.session = requests.Session()
-        self.session.headers.update({'User-Agent': Faker().user_agent()})
+        self.session.headers.update({"User-Agent": Faker().user_agent()})
         self.session.verify = False
         self.session.timeout = 6
         self.session.proxies = {
-            "http": "http://agent.baidu.com:8188",
-            "https": "http://agent.baidu.com:8188",
+            #"http": "http://agent.baidu.com:8188",
+            #"https": "http://agent.baidu.com:8188",
         }
 
     def parse_m3u8_url(self):
@@ -154,7 +154,7 @@ class Downloader():
                     print(e)
                     continue
 
-        os.remove("./" + str(save_folder))
+        os.rmdir("./" + str(save_folder))
 
     def run(self, max_workers=4):
         """
@@ -193,6 +193,6 @@ class Downloader():
 
 if __name__ == '__main__':
     # How to use it in your work!
-    url = "http://video.twimg.com/ext_tw_video/1204327308938506240/pu/pl/432x240/m2wY9Q9LPuFDXEr0.m3u8"
-    name = "六万4"
+    url = "https://yj.yongjiu6.com/20190120/1ZEFemiS/index.m3u8?sign=e1d284f2090a2d8280a9c57a983755bb9a3ac1208b69a731282a9aa3347a56d008f3a5374cedeeefa68f7217b759d177aba324224990cce96c36ba82ca48ee4d"
+    name = "和表姐同居"
     Downloader(url, filename=name).run(max_workers=128)
