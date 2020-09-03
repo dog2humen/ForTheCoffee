@@ -1,0 +1,85 @@
+InnoDB 重要磁盘文件
+https://juejin.im/post/6844903672762089485
+系统表空间(innodb_data_file_path): ibdata1...
+redo log(innodb_log_file_size): ib_logfile0, ib_logfile1
+用户表空间: 表名.ibd; 数据、索引和插入缓冲BITMAP等信息
+
+innodb结构图
+https://user-gold-cdn.xitu.io/2018/9/9/165bc3478f291925?imageView2/0/w/1280/h/960/format/webp/ignore-error/1
+
+
+InnoDB 用户表文件物理结构
+https://www.cnblogs.com/163yun/p/8892324.html
+http://mysql.taobao.org/monthly/2016/02/01/
+
+innodb的layout分成几个层次
+page 一次IO的最小单位，默认16KB
+extent 数个连续的page
+segment 由数个extents组成的集合
+
+段(segment)
+表空间是由不同的段组成的，常见的段有：数据段，索引段，回滚段等等，在 MySQL中，数据是按照B+树来存储，因此数据即索引，因此数据段即为B+树的叶子节点，索引段为B+树的非叶子节点,回滚段用于存储undo日志，用于事务失败后数据回滚以及在事务未提交之前通过undo日志获取之前版本的数据，在InnoDB1.1版本之前一个InnoDB,只支持一个回滚段，支持1023个并发修改事务同时进行，在InnoDB1.2版本，将回滚段数量提高到了128个，也就是说可以同时进行128*1023个并发修改事务。
+
+区(extent)
+区是由连续页组成的空间，每个区的固定大小为1MB,为保证区中页的连续性，InnoDB会一次从磁盘中申请4~5个区，在默认不压缩的情况下，一个区可以容纳64个连续的页。但是在开始新建表的时候，空表的默认大小为96KB,是由于为了高效的利用磁盘空间，在开始插入数据时表会先利用32个页大小的碎片页来存储数据，当这些碎片使用完后，表大小才会按照MB倍数来增加。
+
+页(page)
+页是InnoDB存储引擎的最小管理单位，每页大小默认是16KB，从InnoDB 1.2.x版本开始，可以利用innodb_page_size来改变页size，但是改变只能在初始化InnoDB实例前进行修改，之后便无法进行修改，除非mysqldump导出创建新库，常见的页类型有：数据页、undo页、系统页、事务数据页、插入缓冲位图页、插入缓冲空闲列表页、未压缩的二进制大对象页、压缩的二进制大对象页。
+
+行(row)
+行对应的是表中的行记录，每页存储最多的行记录也是有硬性规定的最多16KB/2-200,即7992行（16KB是页大小，我也不明白为什么要这么算,据说是内核定义）
+
+
+1 B树
+
+定义：
+
+B树（B-TREE）满足如下条件，即可称之为m阶B树：
+
+每个节点之多拥有m棵子树；
+根结点至少拥有两颗子树（存在子树的情况下);
+除了根结点以外，其余每个分支结点至少拥有 m/2 棵子树；
+所有的叶结点都在同一层上；
+有 k 棵子树的分支结点则存在 k-1 个关键码，关键码按照递增次序进行排列；
+关键字数量需要满足ceil(m/2)-1 <= n <= m-1；
+
+2 B+树
+
+定义：
+
+B+树满足如下条件，即可称之为m阶B+树：
+
+根结点只有一个，分支数量范围为[2，m]
+分支结点，每个结点包含分支数范围为[ceil(m/2), m]；
+分支结点的关键字数量等于其子分支的数量减一，关键字的数量范围为[ceil(m/2)-1, m-1]，关键字顺序递增；
+所有叶子结点都在同一层；
+
+
+1 聚簇索引
+
+每个InnoDB的表都拥有一个索引，称之为聚簇索引，此索引中存储着行记录，一般来说，聚簇索引是根据主键生成的。为了能够获得高性能的查询、插入和其他数据库操作，理解InnoDB聚簇索引是很有必要的。
+
+聚簇索引按照如下规则创建：
+
+当定义了主键后，InnoDB会利用主键来生成其聚簇索引；
+如果没有主键，InnoDB会选择一个非空的唯一索引来创建聚簇索引；
+如果这也没有，InnoDB会隐式的创建一个自增的列来作为聚簇索引。
+Note: 对于选择唯一索引的顺序是按照定义唯一索引的顺序，而非表中列的顺序, 同时选中的唯一索引字段会充当为主键，或者InnoDB隐式创建的自增列也可以看做主键。
+
+
+落盘完整缓冲层
+https://www.cnblogs.com/zengkefu/p/5674586.html
+
+innodb user space:
+redo-log-buffer
+buffer pool
+
+file system kernel space:
+page cache | buffer cache :: use o_direct ignore
+Inode cache | directory buffer
+
+storage controller:
+write-black buffer NVME|ACHI等磁盘协议缓存
+
+disk
+disk buffer 磁盘控制器主控等缓存
