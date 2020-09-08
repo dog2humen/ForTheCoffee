@@ -6,6 +6,9 @@
 | 03 | N皇后 | n-queens | 51 | [link](https://leetcode-cn.com/problems/n-queens/) |
 | 04 | 二叉树的所有路径 | binary-tree-paths | 257 | [link](https://leetcode-cn.com/problems/binary-tree-paths) |
 | 05 | 第k个排列 | permutation-sequence | 60 | [link](https://leetcode-cn.com/problems/permutation-sequence) |
+| 06 | 二叉树层序遍历II | binary-tree-level-order-traversal-ii | 107 | [link](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii) |
+| 07 | 前k个高频元素 | top-k-frequent-elements | 347 | [link](https://leetcode-cn.com/problems/top-k-frequent-elements) |
+| 08 | 组合 | combinations | 77 | [link](https://leetcode-cn.com/problems/combinations) |
 
 
 ## 8月leetcode每日一题
