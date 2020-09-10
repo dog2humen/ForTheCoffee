@@ -1,0 +1,31 @@
+例子:
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1000000,RESOLUTION=1280x720
+/ppvod/DB3CEA4515B3118B2836E3D92B363EA3.m3u8
+
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:14
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-KEY:METHOD=AES-128,URI="/20170822/W9TPnNDD/1000kb/hls/key.key"
+#EXTINF:13.313,
+/20170822/W9TPnNDD/1000kb/hls/0E9Bt5QG4101000.ts
+
+m3u8 文件必须以 utf-8 进行编码
+m3u8 文件的每一行要么是一个 URI，要么是空行，要么就是以 # 开头的字符串
+m3u8 文件中以 # 开头的字符串要么是注释，要么就是标签。
+
+
+基础标签 (Basic Tags):
+首行: #EXTM3U:
+表明该文件是一个 m3u8 文件。每个 M3U 文件必须将该标签放置在第一行。
+版本行: #EXT-X-VERSION:
+表示 HLS 的协议版本号
+
+媒体片段类型标签 (Media Segment Tags):
+EXT-X-TARGETDURATION：表示每个视频分段最大的时长（单位秒）
+EXT-X-MEDIA-SEQUENCE：表示播放列表第一个 URL 片段文件的序列号
+EXT-X-KEY：媒体片段可以进行加密，而该标签可以指定解密方法。
+EXTINF：表示其后 URL 指定的媒体片段时长（单位为秒）。
+EXT-X-ENDLIST：表明 m3u8 文件的结束
+EXT-X-STREAM-INF：该属性指定了一个备份源。该属性值提供了该备份源的相关信息。选项BANDWIDTH：该属性为每秒传输的比特数，也即带宽。
