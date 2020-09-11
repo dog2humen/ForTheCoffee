@@ -9,6 +9,9 @@
 | 06 | 二叉树层序遍历II | binary-tree-level-order-traversal-ii | 107 | [link](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii) |
 | 07 | 前k个高频元素 | top-k-frequent-elements | 347 | [link](https://leetcode-cn.com/problems/top-k-frequent-elements) |
 | 08 | 组合 | combinations | 77 | [link](https://leetcode-cn.com/problems/combinations) |
+| 09 | 组合总和 | combination-sum | 39 | [link](https://leetcode-cn.com/problems/combination-sum) |
+| 10 | 组合总和 II | combination-sum | 40 | [link](https://leetcode-cn.com/problems/combination-sum-ii) |
+| 11 | 组合总和 III | combination-sum | 216 | [link](https://leetcode-cn.com/problems/combination-sum-iii) |
 
 
 ## 8月leetcode每日一题
