@@ -12,6 +12,7 @@
 | 09 | 组合总和 | combination-sum | 39 | [link](https://leetcode-cn.com/problems/combination-sum) |
 | 10 | 组合总和 II | combination-sum | 40 | [link](https://leetcode-cn.com/problems/combination-sum-ii) |
 | 11 | 组合总和 III | combination-sum | 216 | [link](https://leetcode-cn.com/problems/combination-sum-iii) |
+| 12 | 二叉树的层平均值 | average-of-levels-in-binary-tree | 637 | [link](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree) |
 
 
 ## 8月leetcode每日一题
