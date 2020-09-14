@@ -224,3 +224,43 @@ class Solution(object):
                 queue.append((node.right, depth + 1))
 
         return 0
+
+    # 中序遍历
+    # dfs
+    def inorderTraversal_v1(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        res = []
+        def dfs(root):
+            if not root:
+                return
+            dfs(root.left)
+            res.append(root.val)
+            dfs(root.right)
+
+        dfs(root)
+        return res
+    
+    # stack
+    def inorderTraversal_v2(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root:
+            return []
+
+        res = []
+        stack = []
+
+        while root or stack:
+            while root:
+                stack.append(root)
+                root = root.left
+
+            root = stack.pop()
+            res.append(root.val)
+            root = root.right
+        return res
