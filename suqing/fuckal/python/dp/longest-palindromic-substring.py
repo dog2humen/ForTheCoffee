@@ -10,8 +10,9 @@
 """
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        return self.longestPalindrome_v1(s)
-        return self.longestPalindrome_v2(s)
+        #return self.longestPalindrome_v1(s)
+        #return self.longestPalindrome_v2(s)
+        return self.longestPalindrome_v3(s)
     def longestPalindrome_v1(self, s: str) -> str:
         """
             已s[i]为中心向两侧扩散去判断是否是回文
@@ -39,19 +40,39 @@ class Solution:
             base case dp[0][0] = True
 
         """
+        res = ''
+        size = len(s)
+        if size < 2:
+            return s
+        dp = [[False] * size for _ in range(size)]
+        for i in range(size):
+            dp[i][i] = True
+
+        for j in range(1, size):
+            for i in range(j):
+                print(i, j, s[i], s[j])
+                dp[i][j] = s[i] == s[j] and (j - i < 3 or dp[i + 1][j - 1])
+                print(dp[i][j])
+                if dp[i][j] and j - i + 1 > len(res):
+                    res = s[i: j + 1]
+        
+        return res
+
+    def longestPalindrome_v3(self, s: str) -> str:
         size = len(s)
         dp = [[False] * size for _ in range(size)]
-        dp[0][0] = True
-
-        for i in range(1, len(s)):
-            for j in range(size - i):
-
-                dp[i][j] = s[i] == s[j] and dp[i - 1][j + 1]
-
-
+        res = ''
+        for i in range(size - 1, -1, -1):
+            for j in range(i, size):
+                dp[i][j] = s[i] == s[j] and (j - i < 2 or dp[i + 1][j - 1])
+                if dp[i][j] and j - i + 1 > len(res):
+                    res = s[i: j + 1]
+        return res
 
 if __name__ == '__main__':
     s = 'ecabbad'
+    s = 'acbed'
+    s = 'a'
     obj = Solution()
     print(obj.longestPalindrome(s))
 
