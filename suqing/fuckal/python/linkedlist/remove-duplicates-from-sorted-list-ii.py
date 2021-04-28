@@ -21,3 +21,16 @@ class Solution:
         """
             递归
         """
+
+        if not head or not head.next:
+            return head
+
+        cur = head
+        if cur.val != cur.next.val:
+            head.next = self.deleteDuplicates_v1(head.next)
+        else:
+            while cur and cur.val == head.val:
+                cur = cur.next
+            return self.deleteDuplicates_v1(cur)
+        
+        return head

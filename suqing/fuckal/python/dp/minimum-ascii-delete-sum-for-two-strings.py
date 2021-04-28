@@ -13,6 +13,7 @@
 class Solution:
     def minimumDeleteSum(self, s1: str, s2: str) -> int:
         return self.minimumDeleteSum_v1(s1, s2)
+
     def minimumDeleteSum_v1(self, s1: str, s2: str) -> int:
         memo = [[-1] * len(s2) for _ in range(len(s1))]
         def dp(s1: str, i: int, s2: str, j: int) -> int:

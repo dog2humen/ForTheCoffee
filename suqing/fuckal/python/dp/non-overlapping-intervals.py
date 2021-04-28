@@ -45,8 +45,8 @@ class Solution:
 
 if __name__ == '__main__':
     intervals = [[1, 2], [2, 3], [3, 4], [1, 3]]
-    intervals = [[0, 2], [1, 3], [2, 4], [3, 5], [4, 6]]
-    intervals = [[1, 10], [2, 7], [3, 19], [8, 12], [10, 20], [11, 30]]
+    #intervals = [[0, 2], [1, 3], [2, 4], [3, 5], [4, 6]]
+    #intervals = [[1, 10], [2, 7], [3, 19], [8, 12], [10, 20], [11, 30]]
     obj = Solution()
     print(obj.eraseOverlapIntervals(intervals))
 
